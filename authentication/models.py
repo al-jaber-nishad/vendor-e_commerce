@@ -5,6 +5,22 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE) # Delete profile when user is deleted
+    role = models.ForeignKey('Role', on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics', null=True, blank=True)
+    two_step_verified = models.BooleanField(default=False, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.user.username} Profile"
+
+
 class Role(models.Model):
     name = models.CharField(max_length=255)
 

@@ -3,6 +3,11 @@ from .models import *
 
 # Register your models here.
 
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+	list_display = [field.name for field in Profile._meta.fields]
+
+
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in Role._meta.fields]
