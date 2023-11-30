@@ -1,4 +1,4 @@
-from rest_framework import status
+from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -20,4 +20,4 @@ def get_user_list(request):
         'total_elements': total_elements,
     }
 
-    return Response(response, status=status.HTTP_200_OK)
+    return render(request, 'user/user_list.html', response)
