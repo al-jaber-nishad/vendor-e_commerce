@@ -16,9 +16,9 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Vendor Stylesheets(used for this page only)-->
-		<link href="{% static "assets/plugins/datatables.bundle.css" %}" rel="stylesheet" type="text/css" />
+		<link href="{% static "assets/plugins/custom/datatables/datatables.bundle.css" %}" rel="stylesheet" type="text/css" />
 
-		<link href="{% static "assets/plugins/plugins.bundle.css" %}" rel="stylesheet" type="text/css" />
+		<link href="{% static "assets/plugins/global/plugins.bundle.css" %}" rel="stylesheet" type="text/css" />
 		<!--end::Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 
@@ -40,11 +40,7 @@
         <!-- Main Contents -->
         <div class="main-content" id="main-content">
         <div class="contents">
-            <!-- Navbar Section -->
-            {% comment %} {% include 'navbar.html' %} {% endcomment %}
-            <!-- Navbar Section Ends -->
-
-            {% block content %} asdasdasdasd {% endblock content %}
+            {% block content %}{% endblock content %}
         </div>
         </div>
 
