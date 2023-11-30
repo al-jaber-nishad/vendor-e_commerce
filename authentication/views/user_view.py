@@ -20,4 +20,4 @@ def get_user_list(request):
         'total_elements': total_elements,
     }
 
-    return render(request, 'user/user_list.html', response)
+    return render(request, 'user/user_list.html', {'response': response})
