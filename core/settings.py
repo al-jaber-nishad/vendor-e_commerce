@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Local
     'authentication',
     'core',
+    'order',
 ]
 
 MIDDLEWARE = [
